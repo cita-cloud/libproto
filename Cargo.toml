@@ -1,0 +1,29 @@
+[package]
+name = "libproto"
+version = "0.1.0"
+authors = ["Rivtower Technologies <contact@rivtower.com>"]
+description = "decorate proto struct"
+license = "Apache-2.0"
+edition = "2018"
+
+[dependencies]
+protobuf = { version = "=2.8.1", features = ["with-bytes"]}
+cita-types = "0.1"
+cita-merklehash = "0.1"
+cita-crypto = "0.1"
+hashable = { package = "cita-hashable", version = "0.1" }
+snappy = { package = "cita-snappy", vesrion = "0.1" }
+rustc-serialize = "0.3"
+rlp = "0.5.1"
+serde = "1.0"
+serde_derive = "1.0"
+cita-logger = "0.1.0"
+
+[features]
+default = []
+secp256k1 = ["cita-crypto/secp256k1"]
+ed25519 = ["cita-crypto/ed25519"]
+sm2 = ["cita-crypto/sm2"]
+sha3hash = ["hashable/sha3hash", "cita-merklehash/sha3hash"]
+blake2bhash = ["hashable/blake2bhash", "cita-merklehash/blake2bhash"]
+sm3hash = ["hashable/sm3hash", "cita-merklehash/sm3hash"]
