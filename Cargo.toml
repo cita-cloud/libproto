@@ -12,7 +12,7 @@ cita-types = "0.1"
 cita-merklehash = "0.1"
 cita-crypto = "0.1"
 hashable = { package = "cita-hashable", version = "0.1" }
-snappy = { package = "cita-snappy", vesrion = "0.1" }
+snappy = { package = "cita-snappy", version = "0.1" }
 rustc-serialize = "0.3"
 rlp = "0.5.1"
 serde = "1.0"
