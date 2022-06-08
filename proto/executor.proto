@@ -37,6 +37,7 @@ enum ReceiptError {
     MutableCallInStaticContext = 16;
     OutOfBounds = 17;
     Reverted = 18;
+    AccountFrozen = 19;
 }
 
 message LogEntry {
@@ -86,4 +87,42 @@ message ConsensusConfig {
 message ExecutedResult {
     ExecutedInfo executed_info = 1;
     ConsensusConfig config = 2;
+}
+
+message TrieID {
+    bytes block_hash = 1;
+    bytes state_root = 2;
+    uint64 block_number = 3;
+    bytes acc_key = 4;
+}
+
+message TrieResponse {
+    TrieID id = 1;
+    bytes key = 2;
+    bytes state_proof = 3;
+}
+
+message ReceiptResponse {
+    bool untrusted = 1;
+    bytes hash = 2;
+    uint64 number = 3;
+    Block block = 4;
+    repeated Receipt receipts = 5;
+}
+
+message CodeResponse {
+    TrieID id = 1;
+    bytes address = 2;
+    bytes  data = 3;
+}
+
+message AbiResponse {
+    TrieID id = 1;
+    bytes address = 2;
+    bytes  data = 3;
+}
+
+message BlockResponse {
+    bytes block_hash = 1;
+    Block block = 2;
 }

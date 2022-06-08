@@ -61,6 +61,13 @@ message Request {
         bool peers_info = 28;
         Call estimate_quota = 29;
         bool license_info = 30;
+
+        bytes light_transaction_receipt = 31;
+        bytes light_transaction = 32;
+        bytes light_code = 33;
+        bytes light_abi = 34;
+        bytes light_block = 35;
+        Call lgiht_call = 36;
     }
 }
 

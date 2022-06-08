@@ -180,6 +180,9 @@ macro_rules! loop_macro_for_structs {
             Proposal,
             SignedProposal,
             Vote,
+            AbiResponse,
+            BlockResponse,
+            CodeResponse,
             ConsensusConfig,
             ExecutedHeader,
             ExecutedInfo,
@@ -187,8 +190,11 @@ macro_rules! loop_macro_for_structs {
             LogEntry,
             Receipt,
             ReceiptErrorWithOption,
+            ReceiptResponse,
             ReceiptWithOption,
             StateRoot,
+            TrieID,
+            TrieResponse,
             BatchRequest,
             Call,
             Request,
@@ -236,6 +242,11 @@ macro_rules! loop_macro_for_structs_in_msg {
             BlockTxn,
             CompactSignedProposal,
             GetTxList,
+            TrieResponse,
+            ReceiptResponse,
+            CodeResponse,
+            AbiResponse,
+            BlockResponse,
             // Generate MSG-PROTOS struct automatically end.
         );
     };
@@ -535,6 +546,36 @@ impl Message {
     pub fn take_get_tx_list(&mut self) -> Option<GetTxList> {
         match self.take_content() {
             Some(MsgClass::GetTxList(v)) => Some(v),
+            _ => None,
+        }
+    }
+    pub fn take_trie_response(&mut self) -> Option<TrieResponse> {
+        match self.take_content() {
+            Some(MsgClass::TrieResponse(v)) => Some(v),
+            _ => None,
+        }
+    }
+    pub fn take_receipt_response(&mut self) -> Option<ReceiptResponse> {
+        match self.take_content() {
+            Some(MsgClass::ReceiptResponse(v)) => Some(v),
+            _ => None,
+        }
+    }
+    pub fn take_code_response(&mut self) -> Option<CodeResponse> {
+        match self.take_content() {
+            Some(MsgClass::CodeResponse(v)) => Some(v),
+            _ => None,
+        }
+    }
+    pub fn take_abi_response(&mut self) -> Option<AbiResponse> {
+        match self.take_content() {
+            Some(MsgClass::AbiResponse(v)) => Some(v),
+            _ => None,
+        }
+    }
+    pub fn take_block_response(&mut self) -> Option<BlockResponse> {
+        match self.take_content() {
+            Some(MsgClass::BlockResponse(v)) => Some(v),
             _ => None,
         }
     }
