@@ -64,10 +64,12 @@ message Request {
 
         bytes light_transaction_receipt = 31;
         bytes light_transaction = 32;
-        bytes light_code = 33;
-        bytes light_abi = 34;
-        bytes light_block = 35;
-        Call lgiht_call = 36;
+        string light_code = 33;
+        string light_abi = 34;
+        string light_block_by_hash = 35;
+        string light_block_by_height = 36;
+        Call lgiht_call = 37;
+        string light_transaction_count = 38;
     }
 }
 
