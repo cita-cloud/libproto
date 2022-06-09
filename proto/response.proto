@@ -44,11 +44,11 @@ message Response {
         bytes estimate_quota = 28;
         string license_info = 29;
 
-        bytes lgiht_call = 30;
-        bytes light_transaction_receipt = 31;
+        bytes light_call = 30;
+        string light_transaction_receipt = 31;
         bytes light_transaction = 32;
         bytes light_code = 33;
         bytes light_abi = 34;
-        bytes light_block = 35;
+        string light_block = 35;
     }
 }
