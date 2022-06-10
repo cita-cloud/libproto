@@ -63,5 +63,8 @@ message InnerMessage {
 
         SyncLightRequest SyncLightRequest = 35;
         SyncLightResponse SyncLightResponse = 36;
+
+        LightRequest LightRequest = 37;
+        LightResponse LightResponse = 38;
     }
 }
