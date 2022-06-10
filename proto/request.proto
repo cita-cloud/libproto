@@ -70,6 +70,9 @@ message Request {
         string light_block_by_height = 36;
         Call lgiht_call = 37;
         string light_transaction_count = 38;
+        string light_meta_data = 39;
+        string light_balance = 40;
+        Call light_estimate_quota = 41;
     }
 }
 
