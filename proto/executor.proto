@@ -99,7 +99,7 @@ message TrieID {
 message TrieResponse {
     TrieID id = 1;
     bytes key = 2;
-    bytes state_proof = 3;
+    repeated bytes state_proof = 3;
 }
 
 message ReceiptResponse {
