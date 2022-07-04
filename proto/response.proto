@@ -64,7 +64,7 @@ message LightResponse {
         bytes balance = 12;
         bytes block_header = 13;
         bytes estimate_quota = 14;
-        uint64 transaction_count = 15;
+        bytes transaction_response = 15;
         bytes storage_value = 16;
 
 //        bytes light_call = 30;
