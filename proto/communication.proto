@@ -59,7 +59,7 @@ message InnerMessage {
         ReceiptResponse ReceiptResponse = 31;
         CodeResponse CodeResponse = 32;
         AbiResponse AbiResponse = 33;
-        BlockResponse BlockResponse = 34;
+        TransactionResponse TransactionResponse = 34;
 
         SyncLightRequest SyncLightRequest = 35;
         SyncLightResponse SyncLightResponse = 36;
