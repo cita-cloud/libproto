@@ -125,5 +125,5 @@ message AbiResponse {
 message TransactionResponse {
     bytes block_hash = 1;
     Block block = 2;
-    uint32 tx_index = 3;
+    uint64 index = 3;
 }

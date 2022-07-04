@@ -66,6 +66,7 @@ message LightResponse {
         bytes estimate_quota = 14;
         bytes transaction_response = 15;
         bytes storage_value = 16;
+        uint64 transaction_count = 17;
 
 //        bytes light_call = 30;
 //        string light_transaction_receipt = 31;
