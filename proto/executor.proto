@@ -127,3 +127,12 @@ message TransactionResponse {
     Block block = 2;
     uint64 index = 3;
 }
+
+message ValidatorsListReq {
+    uint64 height = 1;
+}
+
+message ValidatorsListResp {
+    repeated bytes validators = 1;
+    uint64 height = 2;
+}
