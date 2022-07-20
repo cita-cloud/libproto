@@ -69,5 +69,7 @@ message InnerMessage {
 
         ValidatorsListReq ValidatorsListReq = 39;
         ValidatorsListResp ValidatorsListResp = 40;
+
+        BlockWithLogBloom BlockWithLogBloom = 41;
     }
 }
