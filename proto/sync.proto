@@ -16,5 +16,5 @@ message SyncLightRequest {
 }
 
 message SyncLightResponse {
-    repeated Block blocks = 1;
+    repeated BlockWithLogBloom blocks = 1;
 }
