@@ -106,7 +106,7 @@ message ReceiptResponse {
     bool untrusted = 1;
     bytes hash = 2;
     uint64 number = 3;
-    Block block = 4;
+    BlockWithLogBloom block = 4;
     repeated Receipt receipts = 5;
 }
 
@@ -124,7 +124,7 @@ message AbiResponse {
 
 message TransactionResponse {
     bytes block_hash = 1;
-    Block block = 2;
+    BlockWithLogBloom block = 2;
     uint64 index = 3;
 }
 
