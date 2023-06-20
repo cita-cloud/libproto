@@ -14,8 +14,6 @@
 
 extern crate cita_crypto as crypto;
 extern crate cita_types as types;
-#[macro_use]
-extern crate cita_logger as logger;
 extern crate hashable;
 extern crate protobuf;
 extern crate rlp;
@@ -107,7 +105,6 @@ impl UnverifiedTransaction {
         let hash = bytes.crypt_hash();
         let tx_hash = self.crypt_hash();
         if self.get_signature().len() != SIGNATURE_BYTES_LEN {
-            trace!("Invalid signature length {}", hash);
             Err((tx_hash, String::from("Invalid signature length")))
         } else {
             match self.get_crypto() {
@@ -116,13 +113,11 @@ impl UnverifiedTransaction {
                     match signature.recover(&hash) {
                         Ok(pubkey) => Ok((pubkey, tx_hash)),
                         _ => {
-                            trace!("Recover error {}", tx_hash);
                             Err((tx_hash, String::from("Recover error")))
                         }
                     }
                 }
                 _ => {
-                    trace!("Unexpected crypto {}", tx_hash);
                     Err((tx_hash, String::from("Unexpected crypto")))
                 }
             }
@@ -150,8 +145,6 @@ impl UnverifiedTransaction {
             verify_tx_req.set_chain_id(self.get_transaction().get_chain_id());
         } else if version < 3 {
             verify_tx_req.set_chain_id_v1(self.get_transaction().get_chain_id_v1().to_vec());
-        } else {
-            error!("unexpected version {}!", version);
         }
 
         verify_tx_req.set_quota(self.get_transaction().get_quota());
